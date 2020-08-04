@@ -13,9 +13,7 @@ function App() {
   // we're using apollo in App.js to wrap all the components, so that we can use the utility in child components, similar to context api.
   return (
     <ApolloProvider client={client}>
-      <main>
-        <PokemonsContainer />
-      </main>
+      <PokemonsContainer />
     </ApolloProvider>
   );
 }

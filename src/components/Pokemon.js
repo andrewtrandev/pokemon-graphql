@@ -7,11 +7,17 @@ export function Pokemon({ pokemon }) {
         <p>{pokemon.name}</p>
       </div>
       <div className='pokemon_meta'>
-        <span>{pokemon.maxHP}</span>
-        <span>{pokemon.maxCP}</span>
+        <span>HP: {pokemon.maxHP}</span>
+        <span>CP: {pokemon.maxCP}</span>
       </div>
       <div className='pokemon_image'>
         <img src={pokemon.image} alt={pokemon.name} />
+      </div>
+      <div className='pokemon_types'>
+        <span>Type:</span>
+        {pokemon.types.map((type) => (
+          <span key={`${pokemon.id}+${type}`}>{type}</span>
+        ))}
       </div>
       <div className='pokemon_attacks'>
         {pokemon &&
